@@ -2,7 +2,11 @@ package com.aravind.speedometer
 
 import android.animation.ValueAnimator
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.Rect
+import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
@@ -13,7 +17,7 @@ import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.sin
 
-class SpeedometerActivity @JvmOverloads constructor(
+class TachometerView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
@@ -29,15 +33,15 @@ class SpeedometerActivity @JvmOverloads constructor(
     private var _textGap = 50f
 
     @ColorInt
-    private var _borderColor = Color.parseColor("#402c47")
+    private var _borderColor = Color.parseColor("#E6DF19")
 
     @ColorInt
-    private var _fillColor = Color.parseColor("#d83a78")
+    private var _fillColor = Color.parseColor("#061DE6")
 
     @ColorInt
-    private var _textColor = Color.parseColor("#f5f5f5")
+    private var _textColor = Color.parseColor("#FD44FF00")
 
-    private var _metricText = "km/h"
+    private var _metricText = "RPM"
 
     // Dynamic Values
     private val indicatorBorderRect = RectF()
